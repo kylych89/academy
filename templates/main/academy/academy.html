@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+
+{% block Menu %}
+{% for academy in academys %}
+<div class="navbar">
+    <div class="dropdown">
+        <a href="{% url 'main:academy' academy.id %}">
+            <button class="dropbtn">{{academy.name}}
+                <i class="fa fa-caret-down"></i>
+            </button>
+        </a>
+    </div>
+</div>
+{% endfor %}
+{% endblock %}
+
+{% block Content %}
+<table style="width:100%">
+    <tr>
+        <th>
+            <h2>Managers</h2>
+            {% for manager in managers %}
+            <h2>{{manager.name}}</h2>
+            <a href="{% url 'main:update_manager' manager.id %}">
+                <button>Update</button>
+            </a>
+            <a href="{% url 'main:delete_manager' manager.id %}">
+                <button>Delete</button>
+            </a>
+            {% endfor %}
+        </th>
+    </tr>
+
+    <br>
+
+    <tr>
+        <th>
+            <h2>Mentors</h2>
+            {% for mentor in mentors %}
+            <h4>{{mentor.name}}</h4>
+            <a href="{% url 'main:update_mentor' mentor.id %}">
+                <button>Update</button>
+            </a>
+            <a href="{% url 'main:delete_mentor' mentor.id %}">
+                <button>Delete</button>
+            </a>
+            {% endfor %}
+        </th>
+    </tr>
+
+    <br>
+
+
+    <tr>
+        <th>
+            <h2>Students</h2>
+            {% for student in students %}
+            <h4>{{student.name}}</h4>
+            <a href="{% url 'main:update_student' student.id %}">
+                <button>Update</button>
+            </a>
+            <a href="{% url 'main:delete_student' student.id %}">
+                <button>Delete</button>
+            </a>
+            {% endfor %}
+        </th>
+    </tr>
+</table>
+
+{% endblock %}
+

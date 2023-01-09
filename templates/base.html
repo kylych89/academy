@@ -17,58 +17,35 @@
 <div class="Menu">
     {% block Menu %}
     <h1>Menu</h1>
-<!--    <div class="navbar">-->
-<!--        <a href="{% url 'main:base' %}">Главная</a>-->
-<!--        <div class="dropdown">-->
-<!--            <button class="dropbtn"> Новости-->
-<!--                <i class="fa fa-caret-down"></i>-->
-<!--            </button>-->
-<!--            <div class="dropdown-content">-->
-<!--                <a href="https://m.akipress.org/kg//">akipress</a>-->
-<!--                <a href="https://sputnik.kg/">Sputnik</a>-->
-<!--                <a href="https://knews.kg/">knews</a>-->
-<!--                <a href="https://kloop.kg/">kloop</a>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--        <div class="dropdown">-->
-<!--            <button class="dropbtn"> Райондор-->
-<!--                <i class="fa fa-caret-down"></i>-->
-<!--            </button>-->
-<!--            <div class="dropdown-content">-->
-<!--                <a href="{% url 'main:create_region' %}">Район кошуу</a>-->
-<!--                {% for region in regions %}-->
-<!--                <a href="{% url 'main:regions' region.id %}">{{region.name}}</a>-->
-<!--                {% endfor %}-->
-<!--            </div>-->
-<!--        </div>-->
-<!--        <div class="dropdown">-->
-<!--            <button class="dropbtn"> Область-->
-<!--                <i class="fa fa-caret-down"></i>-->
-<!--            </button>-->
-<!--            <div class="dropdown-content">-->
-<!--                <a href="{% url 'main:create_areas' %}">Область кошуу</a>-->
-<!--                {% for area in areas %}-->
-<!--                <a href="{% url 'main:areas' area.id %}">{{area.name}}</a>-->
-<!--                {% endfor %}-->
-<!--            </div>-->
-<!--        </div>-->
-<!--        <div class="dropdown">-->
-<!--            <button class="dropbtn"> Вход-->
-<!--                <i class="fa fa-caret-down"></i>-->
-<!--            </button>-->
-<!--            <div class="dropdown-content">-->
-<!--                <a href="{% url 'main:login' %}">Войти</a>-->
-<!--                <a href="{% url 'main:register' %}">Зарегистрироваться</a>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
+    <div class="navbar">
+        <div class="dropdown">
+            <button class="dropbtn"> Manager
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="{% url 'main:create_manager' %}">Manager кошуу</a>
+                {% for manager in manager %}
+                <a href="{% url 'main:manager' manager.id %}">{{manager.name}}</a>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn"> Mentor
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="{% url 'main:create_mentor' %}">Mentor кошуу</a>
+                {% for mentor in mentors %}
+                <a href="{% url 'main:mentors' mentor.id %}">{{mentor.name}}</a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
     {% endblock %}
 </div>
 
 <div class="Content">
     {% block Content %}
-    <h1>Главная страница</h1>
-    <p>{{info}}</p>
     {% endblock Content %}
 </div>
 

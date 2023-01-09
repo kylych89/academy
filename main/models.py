@@ -40,7 +40,7 @@ class Mentor(models.Model):
 class Student(models.Model):
     name = models.CharField(max_length=50)
     age = models.PositiveIntegerField()
-    # academy = models.OneToOneField(Academy, on_delete=models.CASCADE)
+    academy = models.OneToOneField(Academy, on_delete=models.CASCADE)
     manager = models.ForeignKey(Manager, on_delete=models.CASCADE)
     mentor = models.ForeignKey(Mentor, on_delete=models.CASCADE)
 
