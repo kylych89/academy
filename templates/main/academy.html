@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+
+{% block Menu %}
+{% for academy in academys %}
+<div class="navbar">
+    <div class="dropdown">
+        <a href="{% url 'main:academy' academy.id %}">
+            <button class="dropbtn">{{academy.name}}
+                <i class="fa fa-caret-down"></i>
+            </button>
+        </a>
+    </div>
+</div>
+{% endfor %}
+{% for mentor in mentors %}
+<div class="navbar">
+    <div class="dropdown">
+        <a href="{% url 'main:mentor' mentor.id %}">
+            <button class="dropbtn">{{mentor.name}}
+                <i class="fa fa-caret-down"></i>
+            </button>
+        </a>
+    </div>
+</div>
+{% endfor %}
+{% endblock %}
+
+{% block Content %}
+<h2>Managers</h2>
+{% for manager in managers %}
+<h4>{{manager.name}}</h4>
+{% endfor %}
+
+<br>
+
+<h2>Mentors</h2>
+{% for mentor in mentors %}
+<h4>{{mentor.name}}</h4>
+{% endfor %}
+
+<br>
+
+<h2>Students</h2>
+{% for student in students %}
+<h4>{{student.name}}</h4>
+{% endfor %}
+
+
+{% endblock %}
