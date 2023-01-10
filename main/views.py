@@ -137,7 +137,7 @@ def create_student_view(request):
 
 
 def update_student_view(request, pk):
-    student = Mentor.objects.get(id=pk)
+    student = Student.objects.get(id=pk)
     if request.method == 'POST':
         form = CreateStudentForm(request.POST, instance=student)
         if form.is_valid():
@@ -154,6 +154,6 @@ def update_student_view(request, pk):
 
 
 def delete_student_view(request, pk):
-    student = Mentor.objects.get(id=pk)
+    student = Student.objects.get(id=pk)
     student.delete()
     return redirect('main:index')
