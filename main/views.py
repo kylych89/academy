@@ -10,13 +10,15 @@ from .models import (
 
 
 def index(request):
-    academys = Academy.objects.all()
+    if request.user.is_authenticated:
+        academys = Academy.objects.all()
 
-    context = {
-        'academys': academys
-    }
+        context = {
+            'academys': academys
+        }
 
-    return render(request, 'main/index.html', context)
+        return render(request, 'main/index.html', context)
+    return redirect('account:login')
 
 
 def academy_view(request, pk):

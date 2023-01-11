@@ -25,6 +25,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'main',
+    'account',
 ]
 
 MIDDLEWARE = [
@@ -65,7 +66,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'academy',
         'USER': 'kylych',
-        'PASSWORD': 'qwerty',
+        'PASSWORD': 'qwert',
         'HOST': '127.0.0.1',
         'PORT': '5432',
     }

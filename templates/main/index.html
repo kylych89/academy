@@ -1,8 +1,12 @@
 {% extends "base.html" %}
 
+{% block Content %}
+<h1>INDEX</h1>
+{% endblock %}
 
 <div class="Menu">
     {% block Menu %}
+    {{user}}
     <h1>Menu</h1>
 {% for academy in academys %}
 <div class="navbar">

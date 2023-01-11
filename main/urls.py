@@ -17,7 +17,7 @@ from .views import (
 app_name = 'main'
 
 urlpatterns = [
-    path('v1/', index, name='index'),
+    path('', index, name='index'),
 
     # academy
     path('academy/<int:pk>/', academy_view, name='academy'),
